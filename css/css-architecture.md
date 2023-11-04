@@ -1,14 +1,7 @@
----
-title: CSS architecture
-description: Keep your style files in order so others know what is going on.
-baseurl: ../../../
-nav_groups:
-- primary
-- secondary
-- tertiary
----
+# CSS Architecture
 
 ## Contents
+
 * Goals
 * [Component Practices](#component-practices)
   * [Defining components](#defining-components)
