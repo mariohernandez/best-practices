@@ -1,14 +1,4 @@
-# Front-end Strategy Guide
-
-
-## Key Tenets
-
-* Avoid writing code fast before it's good
-* Avoid writing code good before it works
-* Avoid writing code that would make a teammate curse your name
-* Don't forget that future-you is also a teammate
-
-These guides and guidelines are about the final three points: good code that doesn't aggravate a teammate or a future version of you.
+# Front-end code guidelines
 
 ## Why Guidelines and Not Rules
 
