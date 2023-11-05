@@ -51,7 +51,7 @@ _avoid_:
 * Relying on markup structure and overly-generic class names
 * Reflecting the DOM structure in the class name
 
-```
+```css
 .menu li a {}
 .menu__item__link {}
 ```
@@ -334,7 +334,7 @@ Write class names that answer the question, “What content could I use this on 
 _Avoid_:
 * Creating style rules that undo other rules,
 
-```
+```css
 .component-no-padding {
   padding: 0 !important;
 }
@@ -429,7 +429,7 @@ _Avoid_:
 * Using combinators when you have the option to modify the markup
 
 
-```
+```css
 .my-list li {
   display: block;
 }
@@ -503,14 +503,14 @@ _Avoid_:
 ```HTML
 <input  onfocus= "(evt) => {evt.target.classList.add('focus')"} />
 ```
-```CSS
+```css
 input.focus {
   outline: 1px solid blue;
 }
 ```
 
 _Prefer_:
-```
+```css
 .input:focus {
   outline: 1px solid blue;
 }
@@ -520,6 +520,7 @@ _Prefer_:
 Use the browser's native capabilities in their _simplest available form_ &mdash; which is the one with the least amount of parts.
 
 #### Functional pseudo-class selectors
+
 The functional pseudo-class selectors include
 * `:is()`
 * `:not()`
@@ -543,6 +544,7 @@ Unchained pseudo-classes broaden the scope of affected elements, which likely to
 _Prefer_:
 
 A small and tight scope with clear selector intent:
+
 ```css
 .articleContainer .header,
 .articleContainer .footer {}
@@ -559,6 +561,7 @@ _Because_:
 _Prefer_:
 
 Combining selectors in a list so that each element receives its own specificity.
+
 ```css
 #art-123,
 section.article {}
@@ -576,6 +579,7 @@ _Because_:
 `:not()` will take the specificity of its argument and then apply that to _everything that does not match the argument_.
 
 For example:
+
 ```css
 article:not(#art-123)
 ```
@@ -631,6 +635,7 @@ _Avoid `:has()` when you have control of markup_:
   <h2 class="container__title"></h2>
 </section>
 ```
+
 ```css
 .container:has(h2:empty) {
   padding-top: 1em;
@@ -648,6 +653,7 @@ Using `:has()` in areas where you don't have control of the markup, such as rich
 
 </div>
 ```
+
 ```css
 .rich-text:has(h2) {
   padding-top: 1em;
@@ -655,6 +661,7 @@ Using `:has()` in areas where you don't have control of the markup, such as rich
 ```
 
 **General Principles**
+
 * Use good selector intent to target only what you need to.
 * Be aware of the side-effects of the functional pseudo-class selectors and aim to have as few side-effects as possible
 
@@ -775,7 +782,9 @@ Make class names easy to read — particularly for non-native English speakers.
 }
 
 ```
+
 ### Declaration Order
+
 Developers are expected to write code in a consistent and predictable way. This includes the order of CSS properties.
 
 _Avoid_:
