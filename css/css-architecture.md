@@ -76,7 +76,7 @@ Establish the necessary relationships between elements.
 Assuming this data from a CMS:
 ```json
 {
-  "BlogPost": {
+  "blog_post": {
     "Title": "Introducing HTML",
     "Author": "Eric Meyer",
     "PublishedTime": "2024-07-01T05:00:00.000Z",
@@ -87,11 +87,11 @@ Assuming this data from a CMS:
 
 One might produce this markup
 ```html
-<article class="blogPost blogPost--isPinned">
-  <header class="blogPost__header">
-    <h1 class="blogPost__title">Introducing HTML</h1>
-    <p class="blogPost__author">Eric Meyer</p>
-    <time class="blogPost__publishedTime">June 31st, 2024</time>
+<article class="blog-post blog-post--isPinned">
+  <header class="blog-post__header">
+    <h1 class="blog-post__title">Introducing HTML</h1>
+    <p class="blog-post__author">Eric Meyer</p>
+    <time class="blog-post__publishedTime">June 31st, 2024</time>
   </header>
 </article>
 ```
@@ -100,7 +100,7 @@ And therefore one may want to describe it this way in the CSS:
 
 ```css
 
-  block: blogPost
+  block: blog-post
   elements:
     __header !!
       __title
@@ -118,7 +118,7 @@ And therefore one may want to describe it this way in the CSS:
 
 ```html
 <!-- button with variants that have overlaping concerns and also extend modifiers -->
-<button class="button button--bigger button--primary--green">Save</button>
+<button class="button button--primary--success">Save</button>
 ```
 
 ```css
@@ -126,11 +126,7 @@ And therefore one may want to describe it this way in the CSS:
   font-size: 1.1em;
 }
 
-.button--bigger {
-  font-size: 1.5em;
-}
-
-.button--primary--green {
+.button--primary--success {
   font-size: 1.2em;
   background-color: #00ff00;
 }
@@ -158,10 +154,6 @@ And therefore one may want to describe it this way in the CSS:
 /* Button modifier class */
 .button--primary {
   font-size: 1.2em;
-}
-
-.button--green {
-  background-color: #00ff00;
 }
 
 .button--success {
@@ -198,7 +190,7 @@ Class names that communicate useful information to developers might use BEM and 
 Assuming this data from a CMS:
 ```json
 {
-  "BlogPost": {
+  "blog_post": {
     "Title": "Introducing HTML",
     "Author": "Eric Meyer",
     "PublishedTime": "2024-07-01T05:00:00.000Z"
@@ -208,29 +200,29 @@ Assuming this data from a CMS:
 
 One might produce these classes:
 ```html
-<article class="blogPost">
-  <h1 class="blogPost__title">Introducing HTML</h1>
-  <p class="blogPost__author">Eric Meyer</p>
-  <time class="blogPost__publishedTime">June 31st, 2024</time>
+<article class="blog-post">
+  <h1 class="blog-post__title">Introducing HTML</h1>
+  <p class="blog-post__author">Eric Meyer</p>
+  <time class="blog-post__publishedTime">June 31st, 2024</time>
 </article>
 ```
 
 Class names that communicate design semantics could use SMACSS or OOCSS to reflect design. This sample HTML communicates fields from the CMS, and informs the developer what the presentation is:
 
 ```html
-<article class="blogPost card">
-  <h1 class="blogPost__title card__title">Introducing HTML</h1>
-  <p class="blogPost__author card__meta">Eric Meyer</p>
-  <time class="blogPost__publishedTime card__meta">June 31st, 2024</time>
+<article class="blog-post card">
+  <h1 class="blog-post__title card__title">Introducing HTML</h1>
+  <p class="blog-post__author card__meta">Eric Meyer</p>
+  <time class="blog-post__publishedTime card__meta">June 31st, 2024</time>
 </article>
 ```
 
 By reserving class names for developer communication and design information, the author is now able to use appropriate microdata attributes to  augment semantics:
 ```html
-<article class="blogPost card" itemscope itemtype="http://schema.org/blogPost">
-  <h1 class="blogPost__title card__title" itemprop="title">Introducing HTML</h1>
-  <p class="blogPost__author card__meta" itemprop="author">Eric Meyer</p>
-  <time class="blogPost__publishedTime card__meta" itemprop="datePublished">June 31st, 2024</time>
+<article class="blog-post card" itemscope itemtype="http://schema.org/blog-post">
+  <h1 class="blog-post__title card__title" itemprop="title">Introducing HTML</h1>
+  <p class="blog-post__author card__meta" itemprop="author">Eric Meyer</p>
+  <time class="blog-post__publishedTime card__meta" itemprop="datePublished">June 31st, 2024</time>
 </article>
 ```
 
@@ -300,9 +292,9 @@ _Prefer_:
 * Convention to describe relationships
 
 ```css
-.callToAction {}
-.callToAction__title {}
-.callToAction__richText {}
+.call-to-action {}
+.call-to-action__title {}
+.call-to-action__rich-text {}
 ```
 
 This CSS describes the content it's being used. A developer will understand the intent and the context in which these are used.
@@ -360,14 +352,14 @@ _Avoid_:
 
 
 ```css
-.callToAction {
-  display: flex;
-  justify-content: center;
-  font-size: var(--fontSizeBigger);
-  padding: 0.618em 0;
-  margin: 0.618em 0;
+.call-to-action {
   background: rgba(120, 120, 120, .3);
   border: 3px solid rgb(120, 120, 120);
+  display: flex;
+  font-size: var(--fontSizeBigger);
+  justify-content: center;
+  margin: 0.618em 0;
+  padding: 0.618em 0;
   transform: 0.3s ease-in-out;
 }
 ```
@@ -379,7 +371,7 @@ _Prefer_:
 
 ```css
 /* Layout */
-.callToAction {
+.call-to-action {
   display: flex;
   justify-content: center;
   padding: 0.618em 0;
@@ -387,18 +379,18 @@ _Prefer_:
 }
 
 /* Size variation */
-.callToAction--bigger{
+.call-to-action--bigger{
   font-size: var(--fontSizeBigger);
 }
 
 /* Neutral theme variation */
-.callToAction--neutral {
+.call-to-action--neutral {
   background: rgba(120, 120, 120, .3);
   border: 3px solid rgb(120, 120, 120);
 }
 
 /* Interactive variation */
-.callToAction--isInteractive {
+.call-to-action--is-interactive {
   transform: 0.3s ease-in-out;
 }
 ```
@@ -412,7 +404,7 @@ Applying positioning, margins, padding, colors, borders and text styles all in a
 ### Combinators (multi-part selectors)
 Combinators are selector operators that allow the developer to target elements based on some construction of the markup. While a general practice may be to avoid these, there are times when one of these combinators is the most pragmatic choice.
 
-```
+```css
 .foo .bar {} /* Descendant combinator */
 .foo > .bar {} /* child combinator */
 .foo ~ .bar {} /* general sibling selector */
@@ -501,6 +493,7 @@ _Avoid_:
 ```HTML
 <input  onfocus= "(evt) => {evt.target.classList.add('focus')"} />
 ```
+
 ```css
 input.focus {
   outline: 1px solid blue;
@@ -544,8 +537,8 @@ _Prefer_:
 A small and tight scope with clear selector intent:
 
 ```css
-.articleContainer .header,
-.articleContainer .footer {}
+.article-container .header,
+.article-container .footer {}
 ```
 
 _Avoid :is()_:
