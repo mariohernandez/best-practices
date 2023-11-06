@@ -23,19 +23,17 @@
 
 The goals of good CSS should not be different from those of good software engineering. Well-architected CSS, like PHP or JavaScript, should be:
 
-<dl>
-  <dt>Predictable</dt>
-  <dd>CSS and contributed components should be consistent and understandable. Changes should do what you would expect without side-effects.</dd>
+Predictable
+: CSS and contributed components should be consistent and understandable. Changes should do what you would expect without side-effects.
 
-  <dt>Reusable</dt>
-  <dd>CSS rules should be abstract and decoupled enough that you can build new components quickly from existing parts without having to recode patterns and problems you’ve already solved.</dd>
+Reusable
+: CSS rules should be abstract and decoupled enough that you can build new components quickly from existing parts without having to recode patterns and problems you’ve already solved.
 
-  <dt>Maintainable</dt>
-  <dd>As new components and features are needed, it should be easy to add, modify and extend CSS without breaking (or refactoring) existing styles.</dd>
+Maintainable
+: As new components and features are needed, it should be easy to add, modify and extend CSS without breaking (or refactoring) existing styles.
 
-  <dt>Scalable</dt>
-  <dd>CSS should be easy to manage for a single developer or for large, distributed teams (like Drupal’s).</dd>
-</dl>
+Scalable
+: CSS should be easy to manage for a single developer or for large, distributed teams (like Drupal’s).
 
 ## The Component
 
