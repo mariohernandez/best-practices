@@ -594,6 +594,7 @@ _Avoid_ `:where()` for overrides :
 a {
   text-decoration: 1px solid blue;
 }
+
 a:where(:hover, :focus) {
   text-decoration: none
 }
@@ -688,7 +689,9 @@ Styles that deal with transient changes to a component’s appearance. Often, th
 
 
 ### Parts of a class name
+
 **Avoid**
+
 * Abbreviations
 * Ambiguity in word boundaries
 
@@ -709,6 +712,7 @@ Styles that deal with transient changes to a component’s appearance. Often, th
 ```
 
 **Prefer**
+
 * Full words
 * A visual separator between words
 
@@ -727,14 +731,16 @@ Styles that deal with transient changes to a component’s appearance. Often, th
 }
 ```
 
-** General Principle**
+**General Principle**
+
 Make class names easy to read — particularly for non-native English speakers.
 
 ### Specificity Scope and Range
+
 **Avoid**
+
 * The `id` selector for setting CSS styles
 * Using `!important` to solve a specificity problem
-
 
 ```css
 #article-container-235 {
@@ -746,8 +752,8 @@ Make class names easy to read — particularly for non-native English speakers.
 }
 ```
 
-
 **Prefer**
+
 * Using an `id` outside of the domain of CSS
   * As a performant JavaScript hook (`getElementById()` is faster than `querySelector()`)
   * As an anchor within a document (`<a href="#section-1"></a>`)
